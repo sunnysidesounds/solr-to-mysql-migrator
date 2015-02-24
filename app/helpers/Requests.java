@@ -11,6 +11,11 @@ import java.net.URL;
 
 public class Requests {
 
+    /**
+     * This does a GET request and return it in JSON response
+     * @param url Url to GET
+     * @return JsonNode object
+     */
     public static JsonNode get(String url) {
         try {
             URL u = new URL(url);
