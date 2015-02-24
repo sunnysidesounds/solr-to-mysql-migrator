@@ -56,4 +56,24 @@ public class SolrData extends Model {
     // Ebeans ORM finder
     public static Finder<Long, SolrData> find = new Finder<Long, SolrData>(Long.class, SolrData.class);
 
+    /**
+     * This finds a SolrData record by id
+     * @param id Solr id, Which is string url.
+     * @return SolrData object
+     */
+    public static SolrData getById(String id){
+        return find.where()
+        .eq("id", id).findUnique();
+    }
+
+    /**
+     * This finds a SolrData record by url
+     * @param url Solr url
+     * @return SolrData object
+     */
+    public static SolrData getByUrl(String url){
+        return find.where()
+        .eq("url", url).findUnique();
+    }
+
 }
