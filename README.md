@@ -5,14 +5,31 @@ This simple web service built with the Play! Framework can migrate indexed Solr 
 
 ## Setup
 
-- STEP 1: Add `"mysql" % "mysql-connector-java" % "<your_mysql_version_number>"` to your **appDependencies** in ./solr-to-mysql-migrator/project/Build.scala
+1. Add `"mysql" % "mysql-connector-java" % "<your_mysql_version_number>"` to your **appDependencies** in ./solr-to-mysql-migrator/project/Build.scala
 
-- STEP 2: Create a database called **solr_mysql_raw** and run the **create_solr_mysql_raw.sql** sql script
+2. Create a database called **solr_mysql_raw** and run the **create_solr_mysql_raw.sql** sql script
 
-- STEP 3: Change **example-application.conf** to **application.conf**
+3. Change **example-application.conf** to **application.conf**
 
-- STEP 4: In the application.conf add your database username and password into these fields:
+4. In the application.conf change the following values to suit your needs:
 
-        db.default.user=<your_username>
-        db.default.password=<your_password>
+        # Update database values:
+        db.default.user= <your_username>
+        db.default.password= <your_password>
+
+        # Update your solr base url (in double-quotes):
+        solr.base.url= <base_url>
+
+        # Update your solr query (in double-quotes and url encode your query):
+        solr.query=<your_solr_query>
+
+        # Update your solr format (in double-quotes):
+        solr.format = <your_format>
+
+        # Update solr start location, default is 0 :
+        solr.start = 0
+
+        # Update solr rows, how many rows from your query you want to return. Default is 1000 :
+        solr.rows = 1000
+
 
