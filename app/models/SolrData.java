@@ -76,4 +76,24 @@ public class SolrData extends Model {
         .eq("url", url).findUnique();
     }
 
+    /**
+     * This inserts the solr raw data into the database;
+     * @param id id of solr data
+     * @param title title of solr data
+     * @param url url of solr data
+     * @param content content of solr data
+     * @param segment segment of solr data
+     * @param digest digest of solr data
+     * @param boost boost of solr data
+     * @param cache cache of solr data
+     * @param tstamp tstamp of solr data
+     * @return SolrData object
+     */
+    public static SolrData setData(String id, String title, String url, String content, String segment,
+       String digest, String boost, String cache, String tstamp){
+        SolrData data = new SolrData(id, title, url, content, segment, digest, boost, cache, tstamp);
+        data.save();
+        return data;
+    }
+
 }
