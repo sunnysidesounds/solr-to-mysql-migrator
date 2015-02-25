@@ -5,7 +5,7 @@ This simple web service built with the Play! Framework can migrate indexed Solr 
 
 ## Setup
 
-1. Add `"mysql" % "mysql-connector-java" % "<your_mysql_version_number>"` to your **appDependencies** in ./solr-to-mysql-migrator/project/Build.scala
+1. Confirm you have `"mysql" % "mysql-connector-java" % "<your_mysql_version_number>"` in your **appDependencies** in ./solr-to-mysql-migrator/project/Build.scala
 
 2. Create a database called **solr_mysql_raw** and run the **create_solr_mysql_raw.sql** sql script
 
@@ -33,3 +33,6 @@ This simple web service built with the Play! Framework can migrate indexed Solr 
         solr.rows = 1000
 
 
+5. Next run the play command to start the play app.
+
+        play clean compile "run 9011"
