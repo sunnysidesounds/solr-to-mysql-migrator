@@ -5,6 +5,7 @@ import play.db.ebean.Model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.*;
 
 @Entity
 public class SolrData extends Model {
@@ -102,6 +103,14 @@ public class SolrData extends Model {
      */
     public static int getCount(){
         return find.findRowCount();
+    }
+
+    /**
+     * This gets all records from the data
+     * @return List of SolrData Object
+     */
+    public static List<SolrData> getAll(){
+        return find.all();
     }
 
 }
