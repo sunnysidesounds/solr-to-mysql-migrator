@@ -96,4 +96,12 @@ public class SolrData extends Model {
         return data;
     }
 
+    /**
+     * This gets total count from solrData table.
+     * @return integer of total count
+     */
+    public static int getCount(){
+        return find.findRowCount();
+    }
+
 }
