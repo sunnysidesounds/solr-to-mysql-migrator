@@ -17,22 +17,43 @@ This simple web service built with the Play! Framework can migrate indexed Solr 
         db.default.user= <your_username>
         db.default.password= <your_password>
 
+
         # Update your solr base url (in double-quotes):
         solr.base.url= <base_url>
+
 
         # Update your solr query (in double-quotes and url encode your query):
         solr.query=<your_solr_query>
 
+
         # Update your solr format (in double-quotes):
         solr.format = <your_format>
+
 
         # Update solr start location, default is 0 :
         solr.start = 0
 
+
         # Update solr rows, how many rows from your query you want to return. Default is 1000 :
         solr.rows = 1000
 
+5. Next start up your Solr instance, I simple did this
 
-5. Next run the play command to start the play app.
+        cd solr/example/
 
+        java -jar start.jar
+
+
+6. Finally let's start up our Play! app
+
+        # Note use any port number you'd, like
         play clean compile "run 9011"
+
+
+## Running
+
+1. Simply cURL the import endpoint
+
+        curl -X GET http://localhost:9011/import
+
+
