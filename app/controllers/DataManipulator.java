@@ -9,7 +9,10 @@ import helpers.*;
 
 public class DataManipulator extends Controller {
 
-
+    /**
+     * This takes data from solr_data table and extracts all the Epicurious recipes
+     * @return Play Object
+     */
     public static Result filterEpicuriousRecipes(){
 
         int limit = 1000;
@@ -58,13 +61,7 @@ public class DataManipulator extends Controller {
             System.out.println("");
             count++;
         }
-
         System.out.println("Total matching epicusious recipe urls: " + isRecipe);
-
         return ok("Done!");
     }
-
-
-
-
 }
