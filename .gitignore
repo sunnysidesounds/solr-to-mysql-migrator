@@ -19,3 +19,4 @@ target/
 logs/
 solr-to-mysql-migrator.iml
 application.conf
+db_dumps/

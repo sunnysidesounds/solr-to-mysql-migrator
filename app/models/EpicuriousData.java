@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import java.util.*;
 
 @Entity
-
 public class EpicuriousData extends Model {
 
     @Id

@@ -61,10 +61,6 @@ public class DOMParser extends Controller {
 
             System.out.println("-----------------------------------------");
             System.out.println("");
-
-
-
-
             if(count == limit){
                 break;
             }
@@ -72,8 +68,6 @@ public class DOMParser extends Controller {
             count++;
 
         }
-
-
 
         return ok("completed");
     }
