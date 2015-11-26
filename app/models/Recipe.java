@@ -59,6 +59,37 @@ public class Recipe extends Model {
     }
 
     /**
+     * This updates a recipe record
+     * @param id recipe id
+     * @param title recipe title
+     * @param sourceUrl where we got the recipe
+     * @param photoUrl the photo of the recipe
+     * @param preparation who to prepare the recipe, instructions
+     * @return
+     */
+    public static Recipe updateData(Long id, String title, String sourceUrl, String photoUrl, String preparation){
+        Recipe updateRecipe = Recipe.getById(id);
+        updateRecipe.updateRecipe(title, sourceUrl, photoUrl, preparation);
+        updateRecipe.update();
+        return updateRecipe;
+    }
+
+    /**
+     * Supports updateData
+     * @param t recipe id
+     * @param s recipe title
+     * @param p where we got the recipe
+     * @param pre who to prepare the recipe, instructions
+     */
+    public void updateRecipe(final String t, final String s, final String p, final String pre){
+        title = t;
+        sourceUrl = s;
+        photoUrl = p;
+        preparation = pre;
+    }
+
+
+    /**
      * This gets a recipe record by source_url
      * @param sourceUrl The sourceURL
      * @return Obj

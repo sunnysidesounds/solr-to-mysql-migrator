@@ -20,8 +20,8 @@ public class DOMParser extends Controller {
     public static Result parseEpicurious() throws IOException{
 
         int count = 0;
-        //int limit = 33253;
-        int limit = 3;
+        int limit = 33253;
+        //int limit = 3;
         String baseUrl = "http://www.epicurious.com";
         List<EpicuriousData> data = EpicuriousData.getAll();
 

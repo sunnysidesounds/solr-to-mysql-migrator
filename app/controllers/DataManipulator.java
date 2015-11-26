@@ -64,4 +64,32 @@ public class DataManipulator extends Controller {
         System.out.println("Total matching epicusious recipe urls: " + isRecipe);
         return ok("Done!");
     }
+
+
+    /**
+     * This changes our recipe title to a title casing.
+     * @return
+     */
+    public static Result formatRecipeTitles() {
+
+        List<Recipe> data = Recipe.getAll();
+        for(Recipe value : data){
+
+            if(DataMod.isUpperCased(value.title)){
+                System.out.println("Title is UPPERCASE : " +  value.title);
+                String titleCaseString = DataMod.toTitleCase(value.title);
+                Recipe.updateData(value.id, titleCaseString, value.sourceUrl, value.photoUrl, value.preparation);
+                System.out.println("    Changing to : " + titleCaseString);
+            } else {
+                System.out.print("Title : " +  value.title + "\n");
+            }
+
+
+        }
+
+        return ok("Completed title casing updates");
+    }
+
+
+
 }

@@ -8,6 +8,8 @@ GET        /import              controllers.SolrMigrator.importData()
 
 # DataManipulator
 GET        /filter/epicurious        controllers.DataManipulator.filterEpicuriousRecipes()
+GET        /recipe/fix/titles        controllers.DataManipulator.formatRecipeTitles()
+
 
 # DOMParser
 GET     /parse/epicurious             controllers.DOMParser.parseEpicurious()
